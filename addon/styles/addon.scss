@@ -1,0 +1,63 @@
+@import 'colors';
+
+.fork-me {
+    display: block;
+    height: 200px;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 200px;
+    z-index: 9999;
+
+    .fork-me-link {
+        background: $forkMeBackground;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+        color: $forkMeColor;
+        font-family: arial, sans-serif;
+        font-size: 1rem;
+        font-weight: bold;
+        line-height: 2rem;
+        padding: 5px 40px;
+        position: absolute;
+        right: -60px;
+        text-align: center;
+        text-decoration: none;
+        top: 55px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transition: 0.5s;
+        width: 200px;
+
+        &:hover {
+            background: $forkMeHoverBackground !important;
+            color: $forkMeHoverColor;
+        }
+
+        &::before,
+        &::after {
+            background: $forkMeBorderColor;
+            content: "";
+            display: block;
+            height: 1px;
+            left: 0;
+            position: absolute;
+            top: 1px;
+            width: 100%;
+        }
+
+        &:hover::before,
+        &:hover::after {
+            background: $forkMeBorderBackgroundColor;
+            color: $forkMeBorderHoverColor;
+        }
+
+        &::after {
+            bottom: 1px;
+            top: auto;
+        }
+    }
+}
